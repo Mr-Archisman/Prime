@@ -89,7 +89,7 @@ const BotStory = () => {
   }, []);
 
   return (
-    <div data-scroll className="bg-purple text-blue" id='story'>
+    <div  className="bg-purple text-blue" id='story' >
       <div className="flex flex-col md:flex-row items-start mx-auto">
         <div id="leftImage" className="w-full md:w-2/5 flex justify-center mb-6 md:mb-0">
           <Image src="/Frame_8.png" alt="Primobot Characters" width={800} height={800} />
@@ -97,7 +97,7 @@ const BotStory = () => {
         <div id="textSection" className="relative flex w-full md:w-3/5 flex-col items-start bg-purple text-white py-12 px-6 md:p-20 max-w-6xl mx-auto 2xl:gap-16">
           <h2 className="opacity-0 text-3xl md:text-5xl font-bold mb-4 z-10">HERE’S THE STORY BEHIND PRIMOBOTS.</h2>
           <Image src="/tmel.png" alt="Primobot Characters" width={600} height={600} />
-          <button className="opacity-0 mt-6 ml-12 md:ml-20 bg-white text-purple py-2 px-4 text-base font-bold z-10 tracking-widest">READ THE FULL STORY</button>
+          <button className="opacity-0 mt-6 ml-12 md:ml-20 bg-white text-purple py-2 px-4 text-base font-bold z-10 tracking-widest hover:bg-yellow transition duration-300 hover:scale-105">READ THE FULL STORY</button>
         </div>
       </div>
       <div className="bg-purple text-white 2xl:pt-12 flex items-center justify-between pb-12 overflow-hidden h-fit">
@@ -105,8 +105,8 @@ const BotStory = () => {
           <p className="md:text-2xl text-lg " style={{fontFamily: 'sora'}}>
             What were once 500,000 militarized, menacing Primobots are now <br />reduced to only 5,555 demilitarized, friendly Primobots.
           </p>
-          <h3 className="text-4xl md:text-7xl font-bold text-yellow mt-6">
-            SO...WHAT WILL YOU DO<br /> WITH YOUR PRIMOBOT?
+          <h3 className="text-4xl md:text-7xl font-bold text-yellow mt-6 ">
+            SO...WHAT WILL YOU DO WITH YOUR PRIMOBOT?
           </h3>
         </div>
         <div id="rightImage" className="h-full flex items-center">

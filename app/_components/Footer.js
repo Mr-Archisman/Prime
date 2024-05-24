@@ -3,13 +3,13 @@ import Image from 'next/image';
 const Footer = () => {
   return (
     <footer id='faq' className=''>
-    <div className="bg-[#CBE3E2] text-purple py-12 md:py-20 px-6 md:px-32 flex flex-col md:flex-row justify-center items-center">
-      <div className="w-full md:w-1/2 flex flex-col md:pl-24 md:pr-10 mb-10 md:mb-0">
+    <div className="bg-[#CBE3E2] text-purple py-12 md:py-20 px-6 md:px-32 2xl:px-4 flex flex-col md:flex-row justify-end items-center">
+      <div className="w-full md:w-1/2 flex flex-col md:pl-24 md:pr-10  2xl:pr-32 mb-10 md:mb-0 items-start ">
         <h2 className="text-4xl md:text-7xl font-bold mb-4">F.A.Q.</h2>
         <p className="text-lg md:text-2xl mb-4" style={{ fontFamily: 'sora' }}>
           Got any questions about Primobots? <br /> Or even NFTs in general?
         </p>
-        <button className="bg-purple text-white w-fit py-2 px-4 text-base font-bold">
+        <button className="bg-purple text-white hover:bg-yellow hover:text-purple hover:scale-105 transition duration-300  w-fit py-2 px-4 text-base font-bold">
           LEARN MORE
         </button>
       </div>
@@ -25,7 +25,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-    <div className="bg-purple text-white py-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left px-6 md:px-20 font-light" style={{fontFamily:'sora'}}>
+    <div className="bg-purple text-white py-8 flex flex-col md:flex-row justify-between items-center text-center md:text-left px-6 md:px-20 2xl:px-32 font-light" style={{fontFamily:'sora'}}>
     <div className="flex items-center space-x-2 mb-4 md:mb-0">
       <Image src="/footerlogo.png" alt="Primobot Logo" width={160} height={80} />
       

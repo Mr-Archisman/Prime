@@ -13,30 +13,29 @@ import UtilityBottom from './_components/UtilityBottom';
 import WhyBuy from './_components/WhyBuy';
 import Roadmap from './_components/Roadmap';
 import Footer from './_components/Footer';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
 
-// const LocomotiveScroll = dynamic(() => import('locomotive-scroll'), { ssr: false });
 export default function Home() {
-  // useEffect(() => {
-  //   if (typeof window !== 'undefined') {
-  //     const scrollContainer = document.querySelector('[data-scroll-container]');
-  //     if (scrollContainer) {
-  //       const locomotiveScroll = new LocomotiveScroll({
-  //         el: scrollContainer,
-  //         smooth: true,
-  //       });
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-  //       // Cleanup function to destroy LocomotiveScroll when the component unmounts
-  //       return () => {
-  //         if (locomotiveScroll) {
-  //           return null
-  //         }
-  //       };
-  //     }
-  //   }
-  // }, []);
+    const smoother = ScrollSmoother.create({
+      wrapper: '#smooth-wrapper',
+      content: '#smooth-content',
+      smooth: 1, // how long it takes to "catch up" to the native scroll position
+      effects: true, // enable data-speed and data-lag attributes
+      smoothTouch: 0.1, // shorter smoothing time on touch devices
+    });
 
+    return () => {
+      smoother.kill(); // Clean up on component unmount
+    };
+  }, []);
   return (
-    <div >
+    <div id="smooth-wrapper">
+      <div id="smooth-content">
       <Navbar />
       <Hero />
       {/* <AnimatedHelmet /> */}
@@ -47,6 +46,7 @@ export default function Home() {
       <WhyBuy />
       <Roadmap />
       <Footer />
+    </div>
     </div>
   );
 }

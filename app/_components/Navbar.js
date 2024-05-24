@@ -25,18 +25,19 @@ const Navbar = () => {
   }, []);
 
   return (
+    <div className='w-screen bg-blue'>
     <header className={`relative z-[1000] bg-purple text-blue p-4 md:px-16 flex justify-between items-center ${!isDrawerOpen && 'clip-path-nav'} md:mx-32`}>
       <div className="flex items-center">
         <Image src="/PLogo.png" alt="Primobots Logo" width={141} height={16} className="mr-2" />
       </div>
       <nav className="relative">
         <div className='flex justify-between items-center'>
-          <ul className="hidden md:flex space-x-4 text-sm font-medium">
-            <li><Link href="#story">STORY</Link></li>
-            <li><Link href="#utility">UTILITY</Link></li>
-            <li><Link href="#roadmap">ROADMAP</Link></li>
-            <li><Link href="#team">TEAM</Link></li>
-            <li><Link href="#faq">FAQ</Link></li>
+          <ul className="hidden md:flex space-x-4 text-sm font-medium ">
+            <li><Link href="#story" className='hover:text-yellow transition duration-800 hover:scale-90'>STORY</Link></li>
+            <li><Link href="#utility" className='hover:text-yellow transition duration-300 hover:scale-90'>UTILITY</Link></li>
+            <li><Link href="#roadmap" className='hover:text-yellow transition duration-300 hover:scale-90'>ROADMAP</Link></li>
+            <li><Link href="#team" className='hover:text-yellow transition duration-300 hover:scale-90'>TEAM</Link></li>
+            <li><Link href="#faq" className='hover:text-yellow transition duration-300 hover:scale-90'>FAQ</Link></li>
           </ul>
           <Image src="/iconframe.png" alt="Primobots Logo" width={90} height={16} className="hidden md:block ml-4" />
         </div>
@@ -55,16 +56,17 @@ const Navbar = () => {
             </button>
           </div>
           <ul className="space-y-4 text-sm font-medium w-full mt-12">
-            <li><Link href="#story" onClick={toggleDrawer}>STORY</Link></li>
-            <li><Link href="#utility" onClick={toggleDrawer}>UTILITY</Link></li>
-            <li><Link href="#roadmap" onClick={toggleDrawer}>ROADMAP</Link></li>
-            <li><Link href="#team" onClick={toggleDrawer}>TEAM</Link></li>
-            <li><Link href="#faq" onClick={toggleDrawer}>FAQ</Link></li>
+            <li><Link href="#story" onClick={toggleDrawer} className='hover:text-yellow transition duration-300 hover:scale-90'>STORY</Link></li>
+            <li><Link href="#utility" onClick={toggleDrawer} className='hover:text-yellow transition duration-300 hover:scale-90'>UTILITY</Link></li>
+            <li><Link href="#roadmap" onClick={toggleDrawer} className='hover:text-yellow transition duration-300 hover:scale-90'>ROADMAP</Link></li>
+            <li><Link href="#team" onClick={toggleDrawer} className='hover:text-yellow transition duration-300 hover:scale-90'>TEAM</Link></li>
+            <li><Link href="#faq" onClick={toggleDrawer} className='hover:text-yellow transition duration-300hover:scale-90'>FAQ</Link></li>
           </ul>
           <Image src="/iconframe.png" alt="Primobots Icon" width={90} height={16} className="mt-32" />
         </div>
       </nav>
     </header>
+    </div>
   );
 };
 
