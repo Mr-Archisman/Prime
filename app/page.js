@@ -14,29 +14,29 @@ import WhyBuy from './_components/WhyBuy';
 import Roadmap from './_components/Roadmap';
 import Footer from './_components/Footer';
 
-const LocomotiveScroll = dynamic(() => import('locomotive-scroll'), { ssr: true });
+// const LocomotiveScroll = dynamic(() => import('locomotive-scroll'), { ssr: false });
 export default function Home() {
-  useEffect(() => {
-    if (typeof window !== 'undefined') {
-      const scrollContainer = document.querySelector('[data-scroll-container]');
-      if (scrollContainer) {
-        const locomotiveScroll = new LocomotiveScroll({
-          el: scrollContainer,
-          smooth: true,
-        });
+  // useEffect(() => {
+  //   if (typeof window !== 'undefined') {
+  //     const scrollContainer = document.querySelector('[data-scroll-container]');
+  //     if (scrollContainer) {
+  //       const locomotiveScroll = new LocomotiveScroll({
+  //         el: scrollContainer,
+  //         smooth: true,
+  //       });
 
-        // Cleanup function to destroy LocomotiveScroll when the component unmounts
-        return () => {
-          if (locomotiveScroll) {
-            return null
-          }
-        };
-      }
-    }
-  }, []);
+  //       // Cleanup function to destroy LocomotiveScroll when the component unmounts
+  //       return () => {
+  //         if (locomotiveScroll) {
+  //           return null
+  //         }
+  //       };
+  //     }
+  //   }
+  // }, []);
 
   return (
-    <div data-scroll-container>
+    <div >
       <Navbar />
       <Hero />
       {/* <AnimatedHelmet /> */}
