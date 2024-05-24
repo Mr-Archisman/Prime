@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.clip-path-nav {
+  clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
+  position: relative;
+  z-index: 10;
+}
+@font-face {
+  font-family: 'MADE Outer Sans Outline Bold';
+  src: url('/fonts/MADE OUTER SANS OUTLINE BOLD PERSONAL USE.OTF') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+.font-outline {
+  -webkit-text-stroke: 1px #2D0233; /* Adjust stroke width and color */
+  color: transparent; /* Make fill color transparent */
+}
