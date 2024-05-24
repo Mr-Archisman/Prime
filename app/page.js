@@ -15,24 +15,10 @@ import Roadmap from './_components/Roadmap';
 import Footer from './_components/Footer';
 import gsap from 'gsap';
 import ScrollTrigger from 'gsap/ScrollTrigger';
-import { ScrollSmoother } from 'gsap-trial/ScrollSmoother';
+
 
 export default function Home() {
-  useEffect(() => {
-    gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
-    const smoother = ScrollSmoother.create({
-      wrapper: '#smooth-wrapper',
-      content: '#smooth-content',
-      smooth: 1, // how long it takes to "catch up" to the native scroll position
-      effects: true, // enable data-speed and data-lag attributes
-      smoothTouch: 0.1, // shorter smoothing time on touch devices
-    });
-
-    return () => {
-      smoother.kill(); // Clean up on component unmount
-    };
-  }, []);
   return (
     <div id="smooth-wrapper">
       <div id="smooth-content">
@@ -50,3 +36,19 @@ export default function Home() {
     </div>
   );
 }
+
+// useEffect(() => {
+//   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+//   const smoother = ScrollSmoother.create({
+//     wrapper: '#smooth-wrapper',
+//     content: '#smooth-content',
+//     smooth: 1, // how long it takes to "catch up" to the native scroll position
+//     effects: true, // enable data-speed and data-lag attributes
+//     smoothTouch: 0.1, // shorter smoothing time on touch devices
+//   });
+
+//   return () => {
+//     smoother.kill(); // Clean up on component unmount
+//   };
+// }, []);
