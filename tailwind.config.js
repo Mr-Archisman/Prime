@@ -13,7 +13,7 @@ module.exports = {
         yellow:'#FAFF1A',
       },
       fontFamily: {
-        customFont: ["MADE Outer Sans Outline", 'sans-serif'],
+        customFont: ["MADE Outer Sans Alt", 'sans-serif'],
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

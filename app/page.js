@@ -1,11 +1,12 @@
 'use client';
 import { useEffect } from 'react';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 import Navbar from './_components/Navbar';
 import Hero from './_components/Hero';
 import MintSection from './_components/MintSection';
 import AnimatedHelmet from './_components/AnimatedHelmet';
-import LocomotiveScroll from 'locomotive-scroll';
+
 import BotStory from './_components/BotStory';
 import Utility from './_components/Utility';
 import UtilityBottom from './_components/UtilityBottom';
@@ -13,17 +14,24 @@ import WhyBuy from './_components/WhyBuy';
 import Roadmap from './_components/Roadmap';
 import Footer from './_components/Footer';
 
+const LocomotiveScroll = dynamic(() => import('locomotive-scroll'), { ssr: true });
 export default function Home() {
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      const locomotiveScroll = new LocomotiveScroll({
-        el: document.querySelector('[data-scroll-container]'),
-        smooth: true,
-      });
+      const scrollContainer = document.querySelector('[data-scroll-container]');
+      if (scrollContainer) {
+        const locomotiveScroll = new LocomotiveScroll({
+          el: scrollContainer,
+          smooth: true,
+        });
 
-      return () => {
-        locomotiveScroll.destroy();
-      };
+        // Cleanup function to destroy LocomotiveScroll when the component unmounts
+        return () => {
+          if (locomotiveScroll) {
+            return null
+          }
+        };
+      }
     }
   }, []);
 
